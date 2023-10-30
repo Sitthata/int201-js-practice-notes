@@ -28,5 +28,3 @@ const getData = async () => {
 const filterExtension = (webList, extension) => {
     return webList.filter((web) => web.endsWith(extension));
 }
-
-getData();
