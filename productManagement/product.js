@@ -23,4 +23,26 @@ const sortByCategory = (products) => {
     return categorizedProduct;
 }
 
+// const applyDiscount = (products, category) => {
+//     return products
+//         .filter(product => product.category.includes(category))
+//         .map(product => ({ ...product, price: product.price * 0.9 }))
+// }
+
+//Higher order
+const applyDiscount = (products, category) => {
+    return products.map(product => {
+        if (product.category.includes(category)) {
+            return {...product, price: product.price * 0.9}
+        }
+        return product
+    })
+}
+
+const sortByPrice = (products) => {
+    return products.sort((p1, p2) => p1.price - p2.price);
+}
+
 console.log(sortByCategory(products));
+console.log(applyDiscount(products, "Electronics"));
+console.log(sortByPrice(products));
